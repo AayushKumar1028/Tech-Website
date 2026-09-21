@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Construction — Materials, Build Steps &amp; Fixes | EGG//DROP</title>
+<meta name="description" content="Stage 04 of the SPICE review: the final egg-drop design, its materials and tools, the four-step build and the problems we fixed.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tailwind.css">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-void text-ink font-sans antialiased">
+
+<div class="bg-stage" aria-hidden="true">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-a"></div>
+  <div class="bg-glow-b"></div>
+</div>
+<div id="progress" class="progress-bar" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="mx-auto flex h-full max-w-wrap items-center justify-between gap-4 px-5">
+    <a class="brand" href="../index.html">
+      <span class="letter-tile" aria-hidden="true">E</span>
+      <span>EGG<span class="brand-dot">//</span>DROP</span>
+    </a>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="m-0 flex list-none items-center gap-7 p-0">
+        <li><a class="nav-link" href="../index.html">Home</a></li>
+        <li><a class="nav-link" href="situation.html">Situation</a></li>
+        <li><a class="nav-link" href="problem.html">Problem</a></li>
+        <li><a class="nav-link" href="investigation.html">Investigation</a></li>
+        <li><a class="nav-link" href="construction.html" aria-current="page">Construction</a></li>
+        <li><a class="nav-link" href="evaluation.html">Evaluation</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">MENU</button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="mx-auto max-w-wrap px-5 pb-10 pt-12 sm:pt-16">
+    <div class="reveal in">
+      <div class="flex flex-wrap items-center gap-4">
+        <span class="letter-tile" aria-hidden="true">C</span>
+        <p class="eyebrow m-0">04 / Construction</p>
+      </div>
+      <h1 class="font-display mt-6 mb-5 max-w-3xl text-4xl font-bold leading-tight sm:text-5xl">
+        Our final design
+      </h1>
+      <p class="m-0 max-w-2xl text-lg leading-relaxed text-muted">
+        Kunj's sketch, built for real. Four parts, each doing one specific job in the
+        fraction of a second that the egg has before it stops.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="mx-auto max-w-wrap px-5 pb-16">
+    <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+
+      <div class="grid gap-4">
+        <div class="hud hud-hover reveal p-6">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <p class="hud-label m-0">part 01</p>
+              <h2 class="font-display mt-3 mb-2 text-xl font-semibold">Parachute</h2>
+              <p class="m-0 text-sm leading-relaxed text-muted">Slows the fall.</p>
+            </div>
+            <span class="letter-tile" aria-hidden="true">1</span>
+          </div>
+        </div>
+        <div class="hud hud-hover reveal p-6" data-delay="1">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <p class="hud-label m-0">part 02</p>
+              <h2 class="font-display mt-3 mb-2 text-xl font-semibold">Suspension tape lines</h2>
+              <p class="m-0 text-sm leading-relaxed text-muted">Keep the shell hanging level.</p>
+            </div>
+            <span class="letter-tile" aria-hidden="true">2</span>
+          </div>
+        </div>
+        <div class="hud hud-hover reveal p-6" data-delay="2">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <p class="hud-label m-0">part 03</p>
+              <h2 class="font-display mt-3 mb-2 text-xl font-semibold">Outer shell</h2>
+              <p class="m-0 text-sm leading-relaxed text-muted">Takes the first hit.</p>
+            </div>
+            <span class="letter-tile" aria-hidden="true">3</span>
+          </div>
+        </div>
+        <div class="hud hud-hover reveal p-6" data-delay="3">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <p class="hud-label m-0">part 04</p>
+              <h2 class="font-display mt-3 mb-2 text-xl font-semibold">Egg seat</h2>
+              <p class="m-0 text-sm leading-relaxed text-muted">Holds the egg still and absorbs shock.</p>
+            </div>
+            <span class="letter-tile" aria-hidden="true">4</span>
+          </div>
+        </div>
+        <div class="hud reveal p-6" data-delay="4">
+          <p class="hud-label m-0">division of labour</p>
+          <p class="m-0 mt-2 text-sm leading-relaxed text-muted">
+            The ballistic half decelerates the rig on the way down; the structural half
+            handles whatever is left when it arrives.
+          </p>
+        </div>
+      </div>
+
+      <div class="reveal" data-delay="2">
+        <div class="hud p-6">
+          <p class="hud-label m-0">assembly — exploded view</p>
+          <div class="sketch-frame mt-4">
+            <svg viewBox="0 0 400 320" role="img" aria-label="Exploded diagram of the final rig: canopy, four suspension lines, outer shell and egg seat">
+              <path d="M120 56 Q200 4 280 56 Z" fill="rgba(34,211,238,.16)" stroke="#22d3ee" stroke-width="2"/>
+              <g stroke="#0891b2" stroke-width="1.3" stroke-dasharray="6 5">
+                <path d="M120 56 L164 132 M160 70 L180 132 M240 70 L220 132 M280 56 L236 132"/>
+              </g>
+              <rect x="152" y="130" width="96" height="96" rx="3" fill="none" stroke="#22d3ee" stroke-width="2"/>
+              <g stroke="#fbbf24" stroke-width="1.3">
+                <path d="M160 142 L200 186 L240 142"/>
+              </g>
+              <ellipse cx="200" cy="188" rx="17" ry="22" fill="none" stroke="#fbbf24" stroke-width="1.4" stroke-dasharray="5 4"/>
+              <g stroke="#8598bd" stroke-width="1" stroke-dasharray="4 4"><path d="M60 268 H340"/></g>
+              <g font-family="'JetBrains Mono',monospace" font-size="10" fill="#8598bd">
+                <text x="286" y="56">canopy</text>
+                <text x="258" y="120">lines</text>
+                <text x="256" y="168">shell</text>
+                <text x="256" y="216">seat</text>
+              </g>
+            </svg>
+          </div>
+          <dl class="mt-5 mb-0">
+            <div class="kv"><dt>Payload mass</dt><dd>1 boiled egg</dd></div>
+            <div class="kv"><dt>Canopy</dt><dd>1 cardstock sheet</dd></div>
+            <div class="kv"><dt>Lines</dt><dd>4 × equal length</dd></div>
+            <div class="kv"><dt>Shell</dt><dd>2 + sheets folded</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MATERIALS + TOOLS ============ -->
+  <section class="mx-auto max-w-wrap px-5 pb-16">
+    <div class="grid gap-6 lg:grid-cols-2">
+      <div class="hud reveal p-8">
+        <p class="eyebrow m-0">&gt; materials</p>
+        <h2 class="font-display mt-4 mb-6 text-2xl font-semibold">Issued kit</h2>
+        <ul class="m-0 grid list-none gap-5 p-0">
+          <li>
+            <p class="m-0 font-mono text-xs uppercase tracking-widest text-neon">Cardstock · 3 sheets</p>
+            <p class="m-0 mt-2 text-sm leading-relaxed text-muted">
+              The outer shell and the parachute canopy. Folded, it doubles as the padding
+              that protects the egg inside.
+            </p>
+          </li>
+          <li>
+            <p class="m-0 font-mono text-xs uppercase tracking-widest text-neon">Tape · 1 arm-length</p>
+            <p class="m-0 mt-2 text-sm leading-relaxed text-muted">
+              The suspension lines, and what is holding the whole package together.
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="hud reveal p-8" data-delay="1">
+        <p class="eyebrow m-0">&gt; tools</p>
+        <h2 class="font-display mt-4 mb-6 text-2xl font-semibold">On the bench</h2>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="hud p-4"><p class="m-0 font-mono text-sm">✂ Scissors</p></div>
+          <div class="hud p-4"><p class="m-0 font-mono text-sm">▭ Ruler</p></div>
+          <div class="hud p-4"><p class="m-0 font-mono text-sm">✎ Marker</p></div>
+          <div class="hud p-4"><p class="m-0 font-mono text-sm">◌ Hole punch</p></div>
+        </div>
+        <p class="mt-6 mb-0 text-sm leading-relaxed text-muted">
+          Tools are for shaping the materials only. Nothing from the bench ends up inside
+          the final package.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BUILD STEPS ============ -->
+  <section class="mx-auto max-w-wrap px-5 pb-16">
+    <div class="reveal mb-8 max-w-2xl">
+      <p class="eyebrow m-0">&gt; fabrication</p>
+      <h2 class="font-display mt-4 mb-3 text-3xl font-bold">Step-by-step build</h2>
+      <p class="m-0 leading-relaxed text-muted">
+        Four steps, in order. Skipping one is how you end up with a rattling egg.
+      </p>
+    </div>
+
+    <ol class="m-0 grid list-none gap-4 p-0 lg:grid-cols-4">
+      <li class="hud hud-hover reveal p-6">
+        <p class="step-num m-0">01</p>
+        <h3 class="font-display mt-3 mb-3 text-lg font-semibold">Build the shell</h3>
+        <p class="m-0 text-sm leading-relaxed text-muted">
+          Cut and fold cardstock into a box with room around the egg.
+        </p>
+      </li>
+      <li class="hud hud-hover reveal p-6" data-delay="1">
+        <p class="step-num m-0">02</p>
+        <h3 class="font-display mt-3 mb-3 text-lg font-semibold">Add padding</h3>
+        <p class="m-0 text-sm leading-relaxed text-muted">
+          Line every wall and the floor so the egg cannot rattle inside the shell.
+        </p>
+      </li>
+      <li class="hud hud-hover reveal p-6" data-delay="2">
+        <p class="step-num m-0">03</p>
+        <h3 class="font-display mt-3 mb-3 text-lg font-semibold">Make the parachute</h3>
+        <p class="m-0 text-sm leading-relaxed text-muted">
+          Cut the canopy, add four equal strings, and tie them to the shell.
+        </p>
+      </li>
+      <li class="hud hud-hover reveal p-6" data-delay="3">
+        <p class="step-num m-0">04</p>
+        <h3 class="font-display mt-3 mb-3 text-lg font-semibold">Seal and check</h3>
+        <p class="m-0 text-sm leading-relaxed text-muted">
+          Place the egg, close the lid, tape the seams, and untangle the lines.
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============ PROBLEMS AND FIXES ============ -->
+  <section class="mx-auto max-w-wrap px-5 pb-16">
+    <div class="reveal mb-8 max-w-2xl">
+      <p class="eyebrow m-0">&gt; debug log</p>
+      <h2 class="font-display mt-4 mb-3 text-3xl font-bold">Problems and fixes</h2>
+      <p class="m-0 leading-relaxed text-muted">
+        Three things went wrong during the build. All three were found by handling the
+        package before the drop, not by hoping.
+      </p>
+    </div>
+
+    <div class="hud reveal overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="data-table">
+          <caption class="sr-only">Problems found during construction and how each was fixed</caption>
+          <thead>
+            <tr>
+              <th scope="col">Problem</th>
+              <th scope="col">Fix</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="font-mono text-xs text-gold">FAULT 01</span>
+                <p class="m-0 mt-2">The egg rattled inside the shell.</p>
+              </td>
+              <td>
+                <p class="m-0 text-muted">Added more padding on every side until the egg sat snugly.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="font-mono text-xs text-gold">FAULT 02</span>
+                <p class="m-0 mt-2">The parachute strings tangled.</p>
+              </td>
+              <td>
+                <p class="m-0 text-muted">Cut the strings to equal lengths and folded the canopy neatly.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="font-mono text-xs text-gold">FAULT 03</span>
+                <p class="m-0 mt-2">Tape peeled off the seams.</p>
+              </td>
+              <td>
+                <p class="m-0 text-muted">Added extra tape and glue at the corners.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-wrap px-5 pb-20">
+    <div class="hud reveal flex flex-wrap items-center justify-between gap-5 p-7">
+      <div>
+        <p class="hud-label m-0">next stage</p>
+        <p class="font-display m-0 mt-2 text-xl font-semibold">05 / Evaluation — did it actually work?</p>
+      </div>
+      <a class="btn btn-primary" href="evaluation.html"><span>Continue →</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="mx-auto max-w-wrap px-5 py-12">
+    <div class="grid gap-8 md:grid-cols-[1.2fr_1fr_1fr]">
+      <div>
+        <a class="brand" href="../index.html">
+          <span class="letter-tile" aria-hidden="true">E</span>
+          <span>EGG<span class="brand-dot">//</span>DROP</span>
+        </a>
+        <p class="mt-4 max-w-sm text-sm leading-relaxed text-muted">
+          A SPICE design-process review of the Egg Drop Challenge, rebuilt as a static site.
+          Built by Aayush &amp; Kunj.
+        </p>
+      </div>
+      <nav aria-label="Stages">
+        <p class="hud-label m-0">Stages</p>
+        <ul class="mt-4 list-none space-y-2 p-0 text-sm">
+          <li><a class="footer-link" href="situation.html">Situation</a></li>
+          <li><a class="footer-link" href="problem.html">Problem</a></li>
+          <li><a class="footer-link" href="investigation.html">Investigation</a></li>
+          <li><a class="footer-link" href="construction.html">Construction</a></li>
+          <li><a class="footer-link" href="evaluation.html">Evaluation</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="hud-label m-0">Build</p>
+        <ul class="mt-4 list-none space-y-2 p-0 text-sm">
+          <li><span class="text-muted">HTML5 + Tailwind CSS</span></li>
+          <li><span class="text-muted">No build step</span></li>
+          <li><a class="footer-link" href="https://github.com/AayushKumar1028/Tech-Website" rel="noopener noreferrer">Source on GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="dashed mt-10 flex flex-wrap items-center justify-between gap-3 pt-6 font-mono text-xs text-muted">
+      <span>© <span data-year>2026</span> Aayush &amp; Kunj · Egg Drop Challenge</span>
+      <span>F = Δp / Δt</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

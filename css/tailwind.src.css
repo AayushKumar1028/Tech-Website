@@ -1,0 +1,6 @@
+/* Tailwind entry point.
+   Build with:  npm run build:css
+   Output:      css/tailwind.css  (committed, so Vercel needs no build step) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

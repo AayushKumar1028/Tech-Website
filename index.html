@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EGG//DROP — The Egg Drop Challenge, a SPICE Review</title>
+<meta name="description" content="The Egg Drop Challenge: a SPICE design-process review by Aayush and Kunj. How a parachute, a cardstock shell and crumble zones kept a boiled egg intact.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="EGG//DROP — The Egg Drop Challenge">
+<meta property="og:description" content="A SPICE design-process review: engineering a package that saves a boiled egg.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tailwind.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-void text-ink font-sans antialiased">
+
+<div class="bg-stage" aria-hidden="true">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-a"></div>
+  <div class="bg-glow-b"></div>
+</div>
+<div id="progress" class="progress-bar" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="mx-auto flex h-full max-w-wrap items-center justify-between gap-4 px-5">
+    <a class="brand" href="index.html">
+      <span class="letter-tile" aria-hidden="true">E</span>
+      <span>EGG<span class="brand-dot">//</span>DROP</span>
+    </a>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="m-0 flex list-none items-center gap-7 p-0">
+        <li><a class="nav-link" href="index.html" aria-current="page">Home</a></li>
+        <li><a class="nav-link" href="pages/situation.html">Situation</a></li>
+        <li><a class="nav-link" href="pages/problem.html">Problem</a></li>
+        <li><a class="nav-link" href="pages/investigation.html">Investigation</a></li>
+        <li><a class="nav-link" href="pages/construction.html">Construction</a></li>
+        <li><a class="nav-link" href="pages/evaluation.html">Evaluation</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">MENU</button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="relative mx-auto max-w-wrap px-5 pb-16 pt-14 sm:pt-20">
+    <div class="grid items-start gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+
+      <div class="reveal in">
+        <p class="eyebrow m-0">&gt; SPICE Protocol · Mission Log 001</p>
+
+        <h1 class="font-display mt-5 mb-0 text-5xl font-bold leading-[0.98] tracking-tight sm:text-6xl xl:text-7xl">
+          The <span class="text-gradient">Egg Drop</span><br>Challenge
+        </h1>
+
+        <p class="mt-6 max-w-xl text-lg leading-relaxed text-muted">
+          Eggs are fragile. Drop one on the floor and it is over before you can blink.
+          Our brief was simple and brutal: <span class="text-ink">protect a boiled egg from a fall
+          using only three sheets of cardstock, one arm-length of tape and our own bad ideas.</span>
+          This is the full engineering record, rebuilt as a site.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a class="btn btn-primary" href="pages/situation.html"><span>Read the brief</span></a>
+          <a class="btn btn-ghost" href="pages/investigation.html"><span>Open the physics</span></a>
+        </div>
+
+        <div class="mt-9 flex flex-wrap items-center gap-2.5">
+          <span class="chip"><span class="chip-dot"></span>2 operators</span>
+          <span class="chip">boiled egg · 1 unit</span>
+          <span class="chip">build window · 3 days</span>
+          <span class="chip">status · shipped</span>
+        </div>
+      </div>
+
+      <!-- console -->
+      <div class="reveal in" data-delay="2">
+        <div class="term" data-boot>
+          <div class="term-bar">
+            <span class="term-dot is-live"></span>
+            <span class="term-dot"></span>
+            <span class="term-dot"></span>
+            <span class="hud-label ml-3">drop-console — spice/protocol</span>
+          </div>
+          <div class="term-body">
+            <div data-text="&gt; init spice.protocol --target=egg_drop"></div>
+            <div data-text="&gt; operators : aayush, kunj"></div>
+            <div data-text="&gt; payload   : 1 boiled egg [FRAGILE]"></div>
+            <div data-text="&gt; budget    : 3x cardstock + 1 arm of tape"></div>
+            <div data-text="&gt; constraint: 25% of shell stays visible"></div>
+            <div data-text="&gt; deadline  : 2026-09-21"></div>
+            <div data-text="&gt; physics   : F = dp/dt  (stretch the stop)"></div>
+            <div data-text="&gt; rig armed. awaiting drop."></div>
+          </div>
+        </div>
+
+        <div class="hud mt-5 p-5">
+          <p class="hud-label m-0">mission parameters</p>
+          <dl class="mt-3 mb-0">
+            <div class="kv"><dt>Drop trials</dt><dd>3 + final</dd></div>
+            <div class="kv"><dt>Egg visibility</dt><dd>≥ 25%</dd></div>
+            <div class="kv"><dt>Materials</dt><dd>kit only</dd></div>
+            <div class="kv"><dt>Build steps</dt><dd>4</dd></div>
+            <div class="kv"><dt>Governing law</dt><dd>F = Δp / Δt</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STAT STRIP ================= -->
+  <section class="mx-auto max-w-wrap px-5 pb-20">
+    <div class="hairline mb-10"></div>
+    <div class="grid grid-cols-2 gap-6 lg:grid-cols-4">
+      <div class="reveal">
+        <p class="font-display m-0 text-4xl font-bold text-neon glow">3×</p>
+        <p class="m-0 mt-1 font-mono text-xs uppercase tracking-widest text-muted">Cardstock sheets issued</p>
+      </div>
+      <div class="reveal" data-delay="1">
+        <p class="font-display m-0 text-4xl font-bold text-neon glow">1&nbsp;arm</p>
+        <p class="m-0 mt-1 font-mono text-xs uppercase tracking-widest text-muted">Length of tape allowed</p>
+      </div>
+      <div class="reveal" data-delay="2">
+        <p class="font-display m-0 text-4xl font-bold text-neon glow">25%</p>
+        <p class="m-0 mt-1 font-mono text-xs uppercase tracking-widest text-muted">Of the egg must stay visible</p>
+      </div>
+      <div class="reveal" data-delay="3">
+        <p class="font-display m-0 text-4xl font-bold text-neon glow">0</p>
+        <p class="m-0 mt-1 font-mono text-xs uppercase tracking-widest text-muted">Cracks allowed in the shell</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SPICE PIPELINE ================= -->
+  <section class="mx-auto max-w-wrap px-5 pb-20">
+    <div class="reveal max-w-2xl">
+      <p class="eyebrow m-0">&gt; methodology</p>
+      <h2 class="font-display mt-4 mb-3 text-3xl font-bold sm:text-4xl">The five-stage SPICE pipeline</h2>
+      <p class="m-0 leading-relaxed text-muted">
+        SPICE is the design loop we ran the whole project through. Every stage has its own
+        page, its own data and its own mistakes.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <a class="hud hud-hover reveal p-6 no-underline" href="pages/situation.html">
+        <div class="flex items-start justify-between gap-4">
+          <p class="phase-index m-0">01 / S</p>
+          <div class="flex gap-1" aria-hidden="true">
+            <span class="letter-tile">S</span>
+          </div>
+        </div>
+        <h3 class="font-display mt-5 mb-2 text-xl font-semibold text-ink">Situation</h3>
+        <p class="m-0 text-sm leading-relaxed text-muted">
+          The scenario, the team and the one goal that mattered: bring the egg home intact.
+        </p>
+        <p class="mt-5 mb-0 font-mono text-xs text-neon">open stage →</p>
+      </a>
+
+      <a class="hud hud-hover reveal p-6 no-underline" data-delay="1" href="pages/problem.html">
+        <div class="flex items-start justify-between gap-4">
+          <p class="phase-index m-0">02 / P</p>
+          <div class="flex gap-1" aria-hidden="true"><span class="letter-tile">P</span></div>
+        </div>
+        <h3 class="font-display mt-5 mb-2 text-xl font-semibold text-ink">Problem</h3>
+        <p class="m-0 text-sm leading-relaxed text-muted">
+          Four hard criteria and four hard limits — the fence every design had to fit inside.
+        </p>
+        <p class="mt-5 mb-0 font-mono text-xs text-neon">open stage →</p>
+      </a>
+
+      <a class="hud hud-hover reveal p-6 no-underline" data-delay="2" href="pages/investigation.html">
+        <div class="flex items-start justify-between gap-4">
+          <p class="phase-index m-0">03 / I</p>
+          <div class="flex gap-1" aria-hidden="true"><span class="letter-tile">I</span></div>
+        </div>
+        <h3 class="font-display mt-5 mb-2 text-xl font-semibold text-ink">Investigation</h3>
+        <p class="m-0 text-sm leading-relaxed text-muted">
+          Why eggs break, five competing designs, four sketches and a live impact calculator.
+        </p>
+        <p class="mt-5 mb-0 font-mono text-xs text-neon">open stage →</p>
+      </a>
+
+      <a class="hud hud-hover reveal p-6 no-underline" data-delay="3" href="pages/construction.html">
+        <div class="flex items-start justify-between gap-4">
+          <p class="phase-index m-0">04 / C</p>
+          <div class="flex gap-1" aria-hidden="true"><span class="letter-tile">C</span></div>
+        </div>
+        <h3 class="font-display mt-5 mb-2 text-xl font-semibold text-ink">Construction</h3>
+        <p class="m-0 text-sm leading-relaxed text-muted">
+          The final rig: parachute, suspension tape, outer shell, egg seat. Plus the four-step build.
+        </p>
+        <p class="mt-5 mb-0 font-mono text-xs text-neon">open stage →</p>
+      </a>
+
+      <a class="hud hud-hover reveal p-6 no-underline" data-delay="4" href="pages/evaluation.html">
+        <div class="flex items-start justify-between gap-4">
+          <p class="phase-index m-0">05 / E</p>
+          <div class="flex gap-1" aria-hidden="true"><span class="letter-tile">E</span></div>
+        </div>
+        <h3 class="font-display mt-5 mb-2 text-xl font-semibold text-ink">Evaluation</h3>
+        <p class="m-0 text-sm leading-relaxed text-muted">
+          Trial drops, the criteria scorecard, what worked, what we would change — and a simulator.
+        </p>
+        <p class="mt-5 mb-0 font-mono text-xs text-neon">open stage →</p>
+      </a>
+
+      <div class="hud reveal p-6" data-delay="5">
+        <p class="phase-index m-0">06 / OUT</p>
+        <h3 class="font-display mt-5 mb-2 text-xl font-semibold text-ink">Deliverable</h3>
+        <p class="m-0 text-sm leading-relaxed text-muted">
+          One egg, zero cracks, built entirely from the issued kit and finished on schedule.
+        </p>
+        <p class="mt-5 mb-0 font-mono text-xs text-gold">result → intact</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= THE RULE ================= -->
+  <section class="mx-auto max-w-wrap px-5 pb-20">
+    <div class="hud reveal p-8 sm:p-10">
+      <div class="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <div>
+          <p class="eyebrow m-0">&gt; governing equation</p>
+          <p class="font-display mt-5 mb-2 text-4xl font-bold text-gradient sm:text-5xl">F = Δp / Δt</p>
+          <p class="m-0 leading-relaxed text-muted">
+            Force equals the change in momentum divided by the time it takes to stop.
+            The longer the egg takes to stop, the smaller the force on its shell.
+          </p>
+          <a class="btn btn-ghost mt-7" href="pages/investigation.html#calculator"><span>Run the numbers</span></a>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="hud p-5">
+            <p class="hud-label m-0">slow the fall</p>
+            <p class="m-0 mt-2 text-sm leading-relaxed text-muted">Air resistance and a parachute cut the speed that the egg arrives with.</p>
+          </div>
+          <div class="hud p-5">
+            <p class="hud-label m-0">stretch the stop</p>
+            <p class="m-0 mt-2 text-sm leading-relaxed text-muted">Padding and crumple zones buy the milliseconds that make the impact survivable.</p>
+          </div>
+          <div class="hud p-5">
+            <p class="hud-label m-0">spread the force</p>
+            <p class="m-0 mt-2 text-sm leading-relaxed text-muted">A bigger contact area means less pressure on any single spot of the shell.</p>
+          </div>
+          <div class="hud p-5">
+            <p class="hud-label m-0">contain the payload</p>
+            <p class="m-0 mt-2 text-sm leading-relaxed text-muted">If the egg leaves the container, nothing else on this list matters.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CHOOSEN DESIGN ================= -->
+  <section class="mx-auto max-w-wrap px-5 pb-20">
+    <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+      <div class="reveal">
+        <p class="eyebrow m-0">&gt; selected build</p>
+        <h2 class="font-display mt-4 mb-4 text-3xl font-bold sm:text-4xl">We went with Kunj's sketch</h2>
+        <p class="m-0 leading-relaxed text-muted">
+          Four sketches, five concepts, one winner. Kunj's design stacked two ideas that
+          protect the egg in different ways: a parachute that lowers the landing speed,
+          and a cardstock case that takes over if the landing is still rough.
+        </p>
+        <ul class="mt-7 grid list-none gap-4 p-0">
+          <li class="flex items-start gap-4">
+            <span class="letter-tile" aria-hidden="true">1</span>
+            <span><strong class="block text-ink">Parachute canopy</strong><span class="text-sm text-muted">Slows the fall before impact.</span></span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="letter-tile" aria-hidden="true">2</span>
+            <span><strong class="block text-ink">Suspension tape lines</strong><span class="text-sm text-muted">Hold the shell hanging level underneath.</span></span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="letter-tile" aria-hidden="true">3</span>
+            <span><strong class="block text-ink">Outer cardstock shell</strong><span class="text-sm text-muted">Takes the first hit and crumples instead of the egg.</span></span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="letter-tile" aria-hidden="true">4</span>
+            <span><strong class="block text-ink">Egg seat</strong><span class="text-sm text-muted">Holds the egg still and absorbs the shock.</span></span>
+          </li>
+        </ul>
+        <a class="btn btn-primary mt-8" href="pages/construction.html"><span>See the build log</span></a>
+      </div>
+
+      <div class="reveal" data-delay="2">
+        <div class="hud p-6">
+          <p class="hud-label m-0">final rig — schematic</p>
+          <div class="sketch-frame mt-4">
+            <svg viewBox="0 0 400 300" role="img" aria-label="Schematic of the final egg-drop rig: a parachute canopy above a cardstock shell holding a suspended egg">
+              <defs>
+                <linearGradient id="can" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#22d3ee" stop-opacity="0.45"/>
+                  <stop offset="1" stop-color="#22d3ee" stop-opacity="0.05"/>
+                </linearGradient>
+              </defs>
+              <path d="M120 78 Q200 20 280 78 Z" fill="url(#can)" stroke="#22d3ee" stroke-width="2"/>
+              <g stroke="#0891b2" stroke-width="1.4" stroke-linecap="round">
+                <path d="M120 78 L163 178 M160 92 L180 178 M200 90 L200 178 M240 92 L220 178 M280 78 L237 178"/>
+              </g>
+              <rect x="160" y="176" width="80" height="92" rx="3" fill="rgba(12,19,35,.95)" stroke="#22d3ee" stroke-width="2"/>
+              <g stroke="#fbbf24" stroke-width="1.4">
+                <path d="M168 190 L200 232 L232 190"/>
+              </g>
+              <ellipse cx="200" cy="226" rx="18" ry="23" fill="#fdefd0" stroke="#c8a24a" stroke-width="1.4"/>
+              <g stroke="#8598bd" stroke-width="1" stroke-dasharray="4 4">
+                <path d="M60 268 H340"/>
+              </g>
+              <g font-family="'JetBrains Mono', monospace" font-size="10" fill="#8598bd">
+                <text x="286" y="72">canopy</text>
+                <text x="246" y="182">tape lines</text>
+                <text x="246" y="252">shell</text>
+                <text x="132" y="206">seat</text>
+              </g>
+              <g stroke="#22d3ee" stroke-width="1" fill="none" opacity=".6">
+                <path d="M84 268 V40" stroke-dasharray="3 5"/>
+                <path d="M84 40 h8 M84 268 h8"/>
+              </g>
+              <text x="26" y="150" font-family="'JetBrains Mono', monospace" font-size="10" fill="#22d3ee" transform="rotate(-90 40 150)">FALL AXIS</text>
+            </svg>
+          </div>
+          <dl class="mt-5 mb-0">
+            <div class="kv"><dt>Primary objective</dt><dd>zero cracks</dd></div>
+            <div class="kv"><dt>Backup objective</dt><dd>shell survives first hit</dd></div>
+            <div class="kv"><dt>Materials used</dt><dd>cardstock · tape</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TEAM ================= -->
+  <section class="mx-auto max-w-wrap px-5 pb-20">
+    <div class="hud reveal p-8 sm:p-10">
+      <div class="grid gap-8 sm:grid-cols-2">
+        <div>
+          <p class="eyebrow m-0">&gt; operators</p>
+          <h2 class="font-display mt-4 mb-3 text-3xl font-bold">Two builders, one egg</h2>
+          <p class="m-0 leading-relaxed text-muted">
+            Aayush and Kunj split the work between design and fabrication, then tested
+            everything as a team. Four sketches came out of it, one of them flew.
+          </p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="hud p-5">
+            <p class="hud-label m-0">operator 01</p>
+            <p class="font-display m-0 mt-2 text-lg font-semibold text-ink">Aayush</p>
+            <p class="m-0 mt-1 text-sm text-muted">Sketches 1–4, site build, physics write-up.</p>
+          </div>
+          <div class="hud p-5">
+            <p class="hud-label m-0">operator 02</p>
+            <p class="font-display m-0 mt-2 text-lg font-semibold text-ink">Kunj</p>
+            <p class="m-0 mt-1 text-sm text-muted">Winning sketch, fabrication, drop testing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="mx-auto max-w-wrap px-5 pb-24">
+    <div class="hud reveal p-8 text-center sm:p-12">
+      <p class="eyebrow m-0">&gt; end of log</p>
+      <h2 class="font-display mx-auto mt-5 mb-4 max-w-2xl text-3xl font-bold sm:text-4xl">
+        Engineers protect fragile things by making impacts last longer.
+      </h2>
+      <p class="mx-auto m-0 max-w-xl leading-relaxed text-muted">
+        That is the whole project in one sentence. Read how we found it, or jump straight
+        to the trial-drop data.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a class="btn btn-primary" href="pages/investigation.html"><span>Start at the physics</span></a>
+        <a class="btn btn-ghost" href="pages/evaluation.html"><span>Jump to the results</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="mx-auto max-w-wrap px-5 py-12">
+    <div class="grid gap-8 md:grid-cols-[1.2fr_1fr_1fr]">
+      <div>
+        <a class="brand" href="index.html">
+          <span class="letter-tile" aria-hidden="true">E</span>
+          <span>EGG<span class="brand-dot">//</span>DROP</span>
+        </a>
+        <p class="mt-4 max-w-sm text-sm leading-relaxed text-muted">
+          A SPICE design-process review of the Egg Drop Challenge, rebuilt as a static site.
+          Built by Aayush &amp; Kunj.
+        </p>
+      </div>
+      <nav aria-label="Stages">
+        <p class="hud-label m-0">Stages</p>
+        <ul class="mt-4 list-none space-y-2 p-0 text-sm">
+          <li><a class="footer-link" href="pages/situation.html">Situation</a></li>
+          <li><a class="footer-link" href="pages/problem.html">Problem</a></li>
+          <li><a class="footer-link" href="pages/investigation.html">Investigation</a></li>
+          <li><a class="footer-link" href="pages/construction.html">Construction</a></li>
+          <li><a class="footer-link" href="pages/evaluation.html">Evaluation</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="hud-label m-0">Build</p>
+        <ul class="mt-4 list-none space-y-2 p-0 text-sm">
+          <li><span class="text-muted">HTML5 + Tailwind CSS</span></li>
+          <li><span class="text-muted">No build step</span></li>
+          <li><a class="footer-link" href="https://github.com/AayushKumar1028/Tech-Website" rel="noopener noreferrer">Source on GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="dashed mt-10 flex flex-wrap items-center justify-between gap-3 pt-6 font-mono text-xs text-muted">
+      <span>© <span data-year>2026</span> Aayush &amp; Kunj · Egg Drop Challenge</span>
+      <span>F = Δp / Δt</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

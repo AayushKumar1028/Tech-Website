@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problem — Criteria &amp; Limits | EGG//DROP</title>
+<meta name="description" content="Stage 02 of the SPICE review: the four success criteria and the four hard limits for the Egg Drop Challenge.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tailwind.css">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-void text-ink font-sans antialiased">
+
+<div class="bg-stage" aria-hidden="true">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-a"></div>
+  <div class="bg-glow-b"></div>
+</div>
+<div id="progress" class="progress-bar" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="mx-auto flex h-full max-w-wrap items-center justify-between gap-4 px-5">
+    <a class="brand" href="../index.html">
+      <span class="letter-tile" aria-hidden="true">E</span>
+      <span>EGG<span class="brand-dot">//</span>DROP</span>
+    </a>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="m-0 flex list-none items-center gap-7 p-0">
+        <li><a class="nav-link" href="../index.html">Home</a></li>
+        <li><a class="nav-link" href="situation.html">Situation</a></li>
+        <li><a class="nav-link" href="problem.html" aria-current="page">Problem</a></li>
+        <li><a class="nav-link" href="investigation.html">Investigation</a></li>
+        <li><a class="nav-link" href="construction.html">Construction</a></li>
+        <li><a class="nav-link" href="evaluation.html">Evaluation</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">MENU</button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="mx-auto max-w-wrap px-5 pb-10 pt-12 sm:pt-16">
+    <div class="reveal in">
+      <div class="flex flex-wrap items-center gap-4">
+        <span class="letter-tile" aria-hidden="true">P</span>
+        <p class="eyebrow m-0">02 / Problem</p>
+      </div>
+      <h1 class="font-display mt-6 mb-5 max-w-3xl text-4xl font-bold leading-tight sm:text-5xl">
+        The criteria and the limits
+      </h1>
+      <p class="m-0 max-w-2xl text-lg leading-relaxed text-muted">
+        A design only counts if it fits inside both lists at the same time. The criteria
+        describe what success looks like; the limits describe what we were allowed to do.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ TWO COLUMNS ============ -->
+  <section class="mx-auto max-w-wrap px-5 pb-16">
+    <div class="grid gap-6 lg:grid-cols-2">
+
+      <!-- criteria -->
+      <div class="hud reveal p-8">
+        <div class="flex items-center justify-between gap-4">
+          <p class="hud-label m-0">must achieve</p>
+          <span class="chip"><span class="chip-dot"></span>4 criteria</span>
+        </div>
+        <h2 class="font-display mt-4 mb-6 text-2xl font-semibold">Criteria</h2>
+        <div class="grid gap-3">
+          <button class="check" type="button" aria-pressed="false" data-check>
+            <span class="check-box" aria-hidden="true">✓</span>
+            <span>
+              <strong class="check-label block text-ink">The egg survives with no cracks</strong>
+              <span class="text-sm text-muted">Intact shell, no leaks, no fractures.</span>
+            </span>
+          </button>
+          <button class="check" type="button" aria-pressed="false" data-check>
+            <span class="check-box" aria-hidden="true">✓</span>
+            <span>
+              <strong class="check-label block text-ink">The device stays in one piece after landing</strong>
+              <span class="text-sm text-muted">A package that explodes on impact does not count.</span>
+            </span>
+          </button>
+          <button class="check" type="button" aria-pressed="false" data-check>
+            <span class="check-box" aria-hidden="true">✓</span>
+            <span>
+              <strong class="check-label block text-ink">25% of the egg must be visible at all times</strong>
+              <span class="text-sm text-muted">The shell can never be fully hidden from view.</span>
+            </span>
+          </button>
+          <button class="check" type="button" aria-pressed="false" data-check>
+            <span class="check-box" aria-hidden="true">✓</span>
+            <span>
+              <strong class="check-label block text-ink">A stranger can load the egg correctly</strong>
+              <span class="text-sm text-muted">A client who knows nothing about the package must place the egg without help.</span>
+            </span>
+          </button>
+        </div>
+        <p class="mt-5 mb-0 font-mono text-xs text-muted">
+          Tip: tap a criterion to mark it off.
+        </p>
+      </div>
+
+      <!-- limits -->
+      <div class="hud reveal p-8" data-delay="1">
+        <div class="flex items-center justify-between gap-4">
+          <p class="hud-label m-0">cannot break</p>
+          <span class="chip">hard limits</span>
+        </div>
+        <h2 class="font-display mt-4 mb-6 text-2xl font-semibold">Limits</h2>
+        <dl class="m-0">
+          <div class="kv"><dt>Deadline</dt><dd>Mon 2026-09-21</dd></div>
+          <div class="kv"><dt>Materials</dt><dd>issued kit only</dd></div>
+          <div class="kv"><dt>Egg case size</dt><dd>smaller than the egg</dd></div>
+          <div class="kv"><dt>Visibility</dt><dd>25% exposed</dd></div>
+        </dl>
+
+        <div class="hairline my-7"></div>
+
+        <ul class="m-0 grid list-none gap-4 p-0 text-sm">
+          <li class="flex gap-3">
+            <span class="text-neon" aria-hidden="true">▸</span>
+            <span class="text-muted">The package must be finished by <strong class="text-ink">Monday, September 21st, 2026</strong>.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-neon" aria-hidden="true">▸</span>
+            <span class="text-muted">The casing must stay <strong class="text-ink">smaller than the egg</strong>, so a quarter of the egg is always showing.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-neon" aria-hidden="true">▸</span>
+            <span class="text-muted">We can only use <strong class="text-ink">the materials given, nothing else</strong>.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MATERIAL BUDGET ============ -->
+  <section class="mx-auto max-w-wrap px-5 pb-16">
+    <div class="reveal mb-8 max-w-2xl">
+      <p class="eyebrow m-0">&gt; resource budget</p>
+      <h2 class="font-display mt-4 mb-3 text-3xl font-bold">Everything we were handed</h2>
+      <p class="m-0 leading-relaxed text-muted">
+        This is the complete bill of materials. If it is not on this list, it could not go
+        into the design.
+      </p>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-3">
+      <div class="hud hud-hover reveal p-6">
+        <p class="font-display m-0 text-3xl font-bold text-neon">3×</p>
+        <p class="hud-label m-0 mt-3">cardstock sheets</p>
+        <p class="m-0 mt-2 text-sm text-muted">A4 cardstock — shell walls, crumple structure, canopy.</p>
+      </div>
+      <div class="hud hud-hover reveal p-6" data-delay="1">
+        <p class="font-display m-0 text-3xl font-bold text-neon">1 arm</p>
+        <p class="hud-label m-0 mt-3">length of tape</p>
+        <p class="m-0 mt-2 text-sm text-muted">One arm-length, total. Suspension lines and every sealed seam.</p>
+      </div>
+      <div class="hud hud-hover reveal p-6" data-delay="2">
+        <p class="font-display m-0 text-3xl font-bold text-neon">1×</p>
+        <p class="hud-label m-0 mt-3">boiled egg</p>
+        <p class="m-0 mt-2 text-sm text-muted">The payload. Fragile, replaceable only until the final drop.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TENSION ============ -->
+  <section class="mx-auto max-w-wrap px-5 pb-16">
+    <div class="hud reveal p-8 sm:p-10">
+      <p class="eyebrow m-0">&gt; the real constraint</p>
+      <h2 class="font-display mt-4 mb-4 text-2xl font-semibold sm:text-3xl">
+        The criteria fight each other
+      </h2>
+      <p class="m-0 max-w-2xl leading-relaxed text-muted">
+        Keep 25% of the egg visible, and you have to leave a hole in the armour. Make the
+        package smaller than the egg, and you lose the volume that padding needs to work.
+        Spend tape on the parachute, and there is less for the seams. Every decision
+        removes an option somewhere else.
+      </p>
+      <div class="mt-8 grid gap-4 md:grid-cols-3">
+        <div class="hud p-5">
+          <p class="hud-label m-0">tension 01</p>
+          <p class="m-0 mt-2 text-sm text-muted">Visibility versus protection.</p>
+        </div>
+        <div class="hud p-5">
+          <p class="hud-label m-0">tension 02</p>
+          <p class="m-0 mt-2 text-sm text-muted">Size limit versus padding volume.</p>
+        </div>
+        <div class="hud p-5">
+          <p class="hud-label m-0">tension 03</p>
+          <p class="m-0 mt-2 text-sm text-muted">Tape budget versus seam strength.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-wrap px-5 pb-20">
+    <div class="hud reveal flex flex-wrap items-center justify-between gap-5 p-7">
+      <div>
+        <p class="hud-label m-0">next stage</p>
+        <p class="font-display m-0 mt-2 text-xl font-semibold">03 / Investigation — why eggs break</p>
+      </div>
+      <a class="btn btn-primary" href="investigation.html"><span>Continue →</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="mx-auto max-w-wrap px-5 py-12">
+    <div class="grid gap-8 md:grid-cols-[1.2fr_1fr_1fr]">
+      <div>
+        <a class="brand" href="../index.html">
+          <span class="letter-tile" aria-hidden="true">E</span>
+          <span>EGG<span class="brand-dot">//</span>DROP</span>
+        </a>
+        <p class="mt-4 max-w-sm text-sm leading-relaxed text-muted">
+          A SPICE design-process review of the Egg Drop Challenge, rebuilt as a static site.
+          Built by Aayush &amp; Kunj.
+        </p>
+      </div>
+      <nav aria-label="Stages">
+        <p class="hud-label m-0">Stages</p>
+        <ul class="mt-4 list-none space-y-2 p-0 text-sm">
+          <li><a class="footer-link" href="situation.html">Situation</a></li>
+          <li><a class="footer-link" href="problem.html">Problem</a></li>
+          <li><a class="footer-link" href="investigation.html">Investigation</a></li>
+          <li><a class="footer-link" href="construction.html">Construction</a></li>
+          <li><a class="footer-link" href="evaluation.html">Evaluation</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="hud-label m-0">Build</p>
+        <ul class="mt-4 list-none space-y-2 p-0 text-sm">
+          <li><span class="text-muted">HTML5 + Tailwind CSS</span></li>
+          <li><span class="text-muted">No build step</span></li>
+          <li><a class="footer-link" href="https://github.com/AayushKumar1028/Tech-Website" rel="noopener noreferrer">Source on GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="dashed mt-10 flex flex-wrap items-center justify-between gap-3 pt-6 font-mono text-xs text-muted">
+      <span>© <span data-year>2026</span> Aayush &amp; Kunj · Egg Drop Challenge</span>
+      <span>F = Δp / Δt</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

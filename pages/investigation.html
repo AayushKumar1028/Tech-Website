@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Investigation — Physics, Sketches &amp; Force Calculator | EGG//DROP</title>
+<meta name="description" content="Stage 03 of the SPICE review: why eggs break, F = Δp/Δt, five principles, four sketches and a live impact-force calculator.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tailwind.css">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-void text-ink font-sans antialiased">
+
+<div class="bg-stage" aria-hidden="true">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-a"></div>
+  <div class="bg-glow-b"></div>
+</div>
+<div id="progress" class="progress-bar" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="mx-auto flex h-full max-w-wrap items-center justify-between gap-4 px-5">
+    <a class="brand" href="../index.html">
+      <span class="letter-tile" aria-hidden="true">E</span>
+      <span>EGG<span class="brand-dot">//</span>DROP</span>
+    </a>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="m-0 flex list-none items-center gap-7 p-0">
+        <li><a class="nav-link" href="../index.html">Home</a></li>
+        <li><a class="nav-link" href="situation.html">Situation</a></li>
+        <li><a class="nav-link" href="problem.html">Problem</a></li>
+        <li><a class="nav-link" href="investigation.html" aria-current="page">Investigation</a></li>
+        <li><a class="nav-link" href="construction.html">Construction</a></li>
+        <li><a class="nav-link" href="evaluation.html">Evaluation</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">MENU</button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="mx-auto max-w-wrap px-5 pb-10 pt-12 sm:pt-16">
+    <div class="reveal in">
+      <div class="flex flex-wrap items-center gap-4">
+        <span class="letter-tile" aria-hidden="true">I</span>
+        <p class="eyebrow m-0">03 / Investigation</p>
+      </div>
+      <h1 class="font-display mt-6 mb-5 max-w-3xl text-4xl font-bold leading-tight sm:text-5xl">
+        What makes an egg break?
+      </h1>
+      <p class="m-0 max-w-2xl text-lg leading-relaxed text-muted">
+        Before designing anything, we worked out the physics. It turns out the shell does not
+        care about height — it cares about how fast the egg has to stop.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ PHYSICS ============ -->
+  <section class="mx-auto max-w-wrap px-5 pb-16">
+    <div class="hud reveal p-8 sm:p-10">
+      <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div>
+          <p class="hud-label m-0">the physics</p>
+          <p class="font-display mt-5 mb-3 text-5xl font-bold text-gradient">F = Δp / Δt</p>
+          <p class="m-0 leading-relaxed text-muted">
+            Force equals the change in momentum divided by the time it takes to stop.
+            The longer the egg takes to stop, the smaller the force on its shell.
+          </p>
+          <p class="mt-5 mb-0 leading-relaxed text-muted">
+            That single equation is the entire strategy. We are not trying to remove the
+            impact — we are trying to <strong class="text-ink">stretch it out</strong> so the
+            same amount of momentum is released gently instead of all at once.
+          </p>
+        </div>
+        <div class="grid gap-4">
+          <div class="hud p-5">
+            <p class="hud-label m-0">step 1 · arrive slowly</p>
+            <p class="m-0 mt-2 text-sm text-muted">Momentum is p = m·v, so a parachute cuts the top half of the fraction.</p>
+          </div>
+          <div class="hud p-5">
+            <p class="hud-label m-0">step 2 · stop slowly</p>
+            <p class="m-0 mt-2 text-sm text-muted">Padding and crumple zones stretch Δt, shrinking the result on the bottom.</p>
+          </div>
+          <div class="hud p-5">
+            <p class="hud-label m-0">step 3 · spread it</p>
+            <p class="m-0 mt-2 text-sm text-muted">A wider contact patch turns the same force into less pressure on any one point.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRINCIPLES ============ -->
+  <section class="mx-auto max-w-wrap px-5 pb-16">
+    <div class="reveal mb-8 max-w-2xl">
+      <p class="eyebrow m-0">&gt; protection toolkit</p>
+      <h2 class="font-display mt-4 mb-3 text-3xl font-bold">Four ways to save a shell</h2>
+      <p class="m-0 leading-relaxed text-muted">
+        Each principle attacks the problem from a different side, and the winning design
+        used more than one of them.
+      </p>
+    </div>
+
+    <div class="grid gap-4 md:grid-cols-2">
+      <div class="hud hud-hover reveal p-7">
+        <p class="phase-index m-0">PRINCIPLE 01</p>
+        <h3 class="font-display mt-4 mb-2 text-xl font-semibold">Security</h3>
+        <p class="m-0 text-sm leading-relaxed text-muted">
+          If the egg falls out of its container, it is game over. The payload has to stay put
+          no matter which way the package tumbles.
+        </p>
+      </div>
+      <div class="hud hud-hover reveal p-7" data-delay="1">
+        <p class="phase-index m-0">PRINCIPLE 02</p>
+        <h3 class="font-display mt-4 mb-2 text-xl font-semibold">Air resistance</h3>
+        <p class="m-0 text-sm leading-relaxed text-muted">
+          A parachute slows the fall, so the egg hits with less speed. Less speed means less
+          momentum to kill on landing.
+        </p>
+      </div>
+      <div class="hud hud-hover reveal p-7" data-delay="2">
+        <p class="phase-index m-0">PRINCIPLE 03</p>
+        <h3 class="font-display mt-4 mb-2 text-xl font-semibold">Spread the force</h3>
+        <p class="m-0 text-sm leading-relaxed text-muted">
+          A bigger contact area means less pressure on any one spot of the shell, which keeps
+          a single weak point from taking the whole hit.
+        </p>
+      </div>
+      <div class="hud hud-hover reveal p-7" data-delay="3">
+        <p class="phase-index m-0">PRINCIPLE 04</p>
+        <h3 class="font-display mt-4 mb-2 text-xl font-semibold">Crumple zones</h3>
+        <p class="m-0 text-sm leading-relaxed text-muted">
+          Parts that bend or crush soak up energy before it ever reaches the egg. The
+          package is supposed to lose the fight, not the payload.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CALCULATOR ============ -->
+  <section class="mx-auto max-w-wrap px-5 pb-16" id="calculator">
+    <div class="reveal mb-8 max-w-2xl">
+      <p class="eyebrow m-0">&gt; interactive</p>
+      <h2 class="font-display mt-4 mb-3 text-3xl font-bold">Impact-force calculator</h2>
+      <p class="m-0 leading-relaxed text-muted">
+        Drop an egg, change how long it takes to stop, and watch the force move. This is the
+        equation from the slide, running live.
+      </p>
+    </div>
+
+    <div class="hud reveal p-8" id="calc">
+      <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <div class="grid gap-6">
+          <div>
+            <label class="hud-label block" for="calc-mass">egg / package mass (g)</label>
+            <input class="field mt-2" id="calc-mass" type="number" min="1" max="500" step="1" value="150">
+          </div>
+          <div>
+            <label class="hud-label block" for="calc-height">drop height (cm)</label>
+            <input class="field mt-2" id="calc-height" type="number" min="1" max="1000" step="1" value="150">
+          </div>
+          <div>
+            <label class="hud-label block" for="calc-stop">stopping time (ms)</label>
+            <input class="field mt-2" id="calc-stop" type="number" min="1" max="500" step="1" value="45">
+          </div>
+          <p class="m-0 text-sm leading-relaxed text-muted">
+            A bare egg stops in a couple of milliseconds. A padded package can stretch that
+            to tens of milliseconds, which is where the saving happens.
+          </p>
+        </div>
+
+        <div class="grid content-start gap-5">
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="hud p-5">
+              <p class="hud-label m-0">impact speed</p>
+              <p class="readout m-0 mt-2" id="out-v">—</p>
+            </div>
+            <div class="hud p-5">
+              <p class="hud-label m-0">momentum Δp</p>
+              <p class="readout m-0 mt-2" id="out-p">—</p>
+            </div>
+            <div class="hud p-5">
+              <p class="hud-label m-0">average force F</p>
+              <p class="readout m-0 mt-2" id="out-f">—</p>
+            </div>
+            <div class="hud p-5">
+              <p class="hud-label m-0">deceleration</p>
+              <p class="readout m-0 mt-2" id="out-g">—</p>
+            </div>
+          </div>
+
+          <div class="hud p-6">
+            <div class="flex items-center justify-between gap-4">
+              <p class="hud-label m-0">shell load</p>
+              <p class="hud-label m-0">limit ≈ 24 N</p>
+            </div>
+            <div class="meter mt-4" role="presentation">
+              <div class="meter-fill" id="calc-meter"></div>
+            </div>
+            <p class="mt-4 mb-0 font-mono text-sm font-bold" id="calc-verdict-box">
+              <span id="calc-verdict">—</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DESIGN SPACE ============ -->
+  <section class="mx-auto max-w-wrap px-5 pb-16">
+    <div class="reveal mb-8 max-w-2xl">
+      <p class="eyebrow m-0">&gt; design space</p>
+      <h2 class="font-display mt-4 mb-3 text-3xl font-bold">The options we compared</h2>
+      <p class="m-0 leading-relaxed text-muted">
+        The class option sheet gave us five numbered concepts to weigh against the criteria
+        before we committed to anything.
+      </p>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      <div class="hud reveal p-5"><p class="phase-index m-0">DESIGN 01</p><p class="m-0 mt-3 text-sm text-muted">Rigid framed case</p></div>
+      <div class="hud reveal p-5" data-delay="1"><p class="phase-index m-0">DESIGN 02</p><p class="m-0 mt-3 text-sm text-muted">Parachute-only rig</p></div>
+      <div class="hud reveal p-5" data-delay="2"><p class="phase-index m-0">DESIGN 03</p><p class="m-0 mt-3 text-sm text-muted">Padded shell</p></div>
+      <div class="hud reveal p-5" data-delay="3"><p class="phase-index m-0">DESIGN 04</p><p class="m-0 mt-3 text-sm text-muted">Rod suspension</p></div>
+      <div class="hud reveal p-5" data-delay="4"><p class="phase-index m-0">DESIGN 05</p><p class="m-0 mt-3 text-sm text-muted">Hybrid case + canopy</p></div>
+    </div>
+
+    <p class="reveal mt-6 mb-0 max-w-3xl text-sm leading-relaxed text-muted">
+      Every concept on that sheet solves one of the four principles well and the others
+      badly. The hybrid design is the only one that stacks two of them.
+    </p>
+  </section>
+
+  <!-- ============ SKETCHES ============ -->
+  <section class="mx-auto max-w-wrap px-5 pb-16">
+    <div class="reveal mb-8 max-w-2xl">
+      <p class="eyebrow m-0">&gt; sketches</p>
+      <h2 class="font-display mt-4 mb-3 text-3xl font-bold">Four ideas, four trade-offs</h2>
+      <p class="m-0 leading-relaxed text-muted">
+        Aayush sketched four versions to work out where each idea fails. The weakness
+        column is the useful one — it is what pushed us to the final design.
+      </p>
+    </div>
+
+    <div class="grid gap-6 lg:grid-cols-2">
+
+      <!-- sketch 1 -->
+      <article class="hud hud-hover reveal p-6">
+        <div class="flex items-center justify-between gap-4">
+          <p class="hud-label m-0">Aayush's sketch #1</p>
+          <span class="chip">concept</span>
+        </div>
+        <div class="sketch-frame mt-4">
+          <svg viewBox="0 0 400 300" role="img" aria-label="Sketch 1: a parachute above a small open holder cradling an egg">
+            <path d="M110 74 Q200 14 290 74 Z" fill="rgba(34,211,238,.14)" stroke="#22d3ee" stroke-width="2"/>
+            <g stroke="#0891b2" stroke-width="1.4"><path d="M110 74 L172 150 M200 62 L200 150 M290 74 L228 150"/></g>
+            <path d="M156 150 h88 v34 a44 40 0 0 1 -88 0 Z" fill="rgba(12,19,35,.95)" stroke="#22d3ee" stroke-width="2"/>
+            <ellipse cx="200" cy="176" rx="17" ry="22" fill="#fdefd0" stroke="#c8a24a" stroke-width="1.4"/>
+            <path d="M60 260 H340" stroke="#8598bd" stroke-dasharray="4 4"/>
+            <text x="150" y="288" font-family="'JetBrains Mono',monospace" font-size="11" fill="#8598bd">parachute slows the fall</text>
+          </svg>
+        </div>
+        <dl class="mt-5 mb-0">
+          <div class="kv"><dt>Strength</dt><dd>softer landing speed</dd></div>
+          <div class="kv"><dt>Mechanism</dt><dd>air resistance</dd></div>
+        </dl>
+        <p class="mt-4 mb-0 text-sm leading-relaxed text-muted">
+          <strong class="text-ink">Weakness:</strong> little protection if it lands hard. The
+          canopy does the work on the way down and nothing on the way in.
+        </p>
+      </article>
+
+      <!-- sketch 2 -->
+      <article class="hud hud-hover reveal p-6" data-delay="1">
+        <div class="flex items-center justify-between gap-4">
+          <p class="hud-label m-0">Aayush's sketch #2</p>
+          <span class="chip">concept</span>
+        </div>
+        <div class="sketch-frame mt-4">
+          <svg viewBox="0 0 400 300" role="img" aria-label="Sketch 2: a padded cardstock box with an egg centred inside">
+            <rect x="132" y="86" width="136" height="136" rx="4" fill="rgba(12,19,35,.95)" stroke="#22d3ee" stroke-width="2"/>
+            <rect x="146" y="100" width="108" height="108" rx="3" fill="none" stroke="#fbbf24" stroke-width="1.2" stroke-dasharray="5 4"/>
+            <ellipse cx="200" cy="154" rx="24" ry="30" fill="#fdefd0" stroke="#c8a24a" stroke-width="1.4"/>
+            <g stroke="#fbbf24" stroke-width="1.2">
+              <path d="M132 122 H146 M132 154 H146 M132 186 H146 M254 122 H268 M254 154 H268 M254 186 H268"/>
+              <path d="M166 86 V100 M200 86 V100 M234 86 V100 M166 208 V222 M200 208 V222 M234 208 V222"/>
+            </g>
+            <path d="M60 260 H340" stroke="#8598bd" stroke-dasharray="4 4"/>
+            <text x="104" y="288" font-family="'JetBrains Mono',monospace" font-size="11" fill="#8598bd">cardstock acts like padding</text>
+          </svg>
+        </div>
+        <dl class="mt-5 mb-0">
+          <div class="kv"><dt>Strength</dt><dd>secured from all angles</dd></div>
+          <div class="kv"><dt>Mechanism</dt><dd>padding + spread force</dd></div>
+        </dl>
+        <p class="mt-4 mb-0 text-sm leading-relaxed text-muted">
+          <strong class="text-ink">Weakness:</strong> falls pretty quickly. With no canopy the
+          shell takes the full arrival speed.
+        </p>
+      </article>
+
+      <!-- sketch 3 -->
+      <article class="hud hud-hover reveal p-6" data-delay="2">
+        <div class="flex items-center justify-between gap-4">
+          <p class="hud-label m-0">Aayush's sketch #3</p>
+          <span class="chip">concept</span>
+        </div>
+        <div class="sketch-frame mt-4">
+          <svg viewBox="0 0 400 300" role="img" aria-label="Sketch 3: a cardstock frame with rod-like legs acting as shock absorbers">
+            <rect x="138" y="72" width="124" height="96" rx="4" fill="rgba(12,19,35,.95)" stroke="#22d3ee" stroke-width="2"/>
+            <ellipse cx="200" cy="120" rx="20" ry="26" fill="#fdefd0" stroke="#c8a24a" stroke-width="1.4"/>
+            <g stroke="#22d3ee" stroke-width="2.4" stroke-linecap="round" fill="none">
+              <path d="M148 168 L142 236 M252 168 L258 236"/>
+              <path d="M166 168 L166 220 L160 236 M234 168 L234 220 L240 236"/>
+            </g>
+            <g stroke="#fbbf24" stroke-width="1.2">
+              <path d="M142 200 H160 M240 200 H258 M142 216 H160 M240 216 H258"/>
+            </g>
+            <path d="M60 250 H340" stroke="#8598bd" stroke-dasharray="4 4"/>
+            <text x="120" y="280" font-family="'JetBrains Mono',monospace" font-size="11" fill="#8598bd">rods act like shock absorbers</text>
+          </svg>
+        </div>
+        <dl class="mt-5 mb-0">
+          <div class="kv"><dt>Strength</dt><dd>tape holds it together</dd></div>
+          <div class="kv"><dt>Mechanism</dt><dd>crumple zone</dd></div>
+        </dl>
+        <p class="mt-4 mb-0 text-sm leading-relaxed text-muted">
+          <strong class="text-ink">Weakness:</strong> paper could bend or crumple if it lands at
+          the wrong angle, or too fast and too hard.
+        </p>
+      </article>
+
+      <!-- sketch 4 -->
+      <article class="hud hud-hover reveal p-6" data-delay="3">
+        <div class="flex items-center justify-between gap-4">
+          <p class="hud-label m-0">Aayush's sketch #4</p>
+          <span class="chip">concept</span>
+        </div>
+        <div class="sketch-frame mt-4">
+          <svg viewBox="0 0 400 300" role="img" aria-label="Sketch 4: a parachute attached to a sealed cardstock case">
+            <path d="M120 66 Q200 12 280 66 Z" fill="rgba(34,211,238,.14)" stroke="#22d3ee" stroke-width="2"/>
+            <g stroke="#0891b2" stroke-width="1.3"><path d="M120 66 L166 130 M200 54 L200 130 M280 66 L234 130"/></g>
+            <rect x="150" y="128" width="100" height="104" rx="4" fill="rgba(12,19,35,.95)" stroke="#22d3ee" stroke-width="2"/>
+            <ellipse cx="200" cy="178" rx="18" ry="24" fill="#fdefd0" stroke="#c8a24a" stroke-width="1.4"/>
+            <path d="M150 152 H250" stroke="#fbbf24" stroke-width="1.2"/>
+            <path d="M60 256 H340" stroke="#8598bd" stroke-dasharray="4 4"/>
+            <text x="112" y="286" font-family="'JetBrains Mono',monospace" font-size="11" fill="#8598bd">canopy + sealed shell</text>
+          </svg>
+        </div>
+        <dl class="mt-5 mb-0">
+          <div class="kv"><dt>Strength</dt><dd>two layers of defence</dd></div>
+          <div class="kv"><dt>Mechanism</dt><dd>air resistance + shell</dd></div>
+        </dl>
+        <p class="mt-4 mb-0 text-sm leading-relaxed text-muted">
+          <strong class="text-ink">Weakness:</strong> little protection if it lands hard on an
+          exposed corner of the case.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ CHOICE ============ -->
+  <section class="mx-auto max-w-wrap px-5 pb-16">
+    <div class="hud reveal p-8 sm:p-10">
+      <div class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+        <div>
+          <p class="eyebrow m-0">&gt; decision</p>
+          <h2 class="font-display mt-4 mb-4 text-3xl font-bold">Choosing our design</h2>
+          <p class="m-0 leading-relaxed text-muted">
+            We chose <strong class="text-ink">Kunj's sketch</strong> (you will find his sketch on
+            his own website). It combines the two strongest principles instead of betting
+            everything on one.
+          </p>
+          <div class="mt-6 flex items-center gap-4">
+            <span class="letter-tile" aria-hidden="true">✓</span>
+            <span class="font-mono text-sm text-lime">selected = best fit</span>
+          </div>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="hud p-5">
+            <p class="hud-label m-0">layer 1</p>
+            <p class="m-0 mt-2 text-sm text-muted">The parachute lowers the landing speed.</p>
+          </div>
+          <div class="hud p-5">
+            <p class="hud-label m-0">layer 2</p>
+            <p class="m-0 mt-2 text-sm text-muted">The case protects the egg if the landing is still rough.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-wrap px-5 pb-20">
+    <div class="hud reveal flex flex-wrap items-center justify-between gap-5 p-7">
+      <div>
+        <p class="hud-label m-0">next stage</p>
+        <p class="font-display m-0 mt-2 text-xl font-semibold">04 / Construction — the build log</p>
+      </div>
+      <a class="btn btn-primary" href="construction.html"><span>Continue →</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="mx-auto max-w-wrap px-5 py-12">
+    <div class="grid gap-8 md:grid-cols-[1.2fr_1fr_1fr]">
+      <div>
+        <a class="brand" href="../index.html">
+          <span class="letter-tile" aria-hidden="true">E</span>
+          <span>EGG<span class="brand-dot">//</span>DROP</span>
+        </a>
+        <p class="mt-4 max-w-sm text-sm leading-relaxed text-muted">
+          A SPICE design-process review of the Egg Drop Challenge, rebuilt as a static site.
+          Built by Aayush &amp; Kunj.
+        </p>
+      </div>
+      <nav aria-label="Stages">
+        <p class="hud-label m-0">Stages</p>
+        <ul class="mt-4 list-none space-y-2 p-0 text-sm">
+          <li><a class="footer-link" href="situation.html">Situation</a></li>
+          <li><a class="footer-link" href="problem.html">Problem</a></li>
+          <li><a class="footer-link" href="investigation.html">Investigation</a></li>
+          <li><a class="footer-link" href="construction.html">Construction</a></li>
+          <li><a class="footer-link" href="evaluation.html">Evaluation</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="hud-label m-0">Build</p>
+        <ul class="mt-4 list-none space-y-2 p-0 text-sm">
+          <li><span class="text-muted">HTML5 + Tailwind CSS</span></li>
+          <li><span class="text-muted">No build step</span></li>
+          <li><a class="footer-link" href="https://github.com/AayushKumar1028/Tech-Website" rel="noopener noreferrer">Source on GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="dashed mt-10 flex flex-wrap items-center justify-between gap-3 pt-6 font-mono text-xs text-muted">
+      <span>© <span data-year>2026</span> Aayush &amp; Kunj · Egg Drop Challenge</span>
+      <span>F = Δp / Δt</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script src="../js/physics.js"></script>
+</body>
+</html>

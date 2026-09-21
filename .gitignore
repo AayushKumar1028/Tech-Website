@@ -1,0 +1,15 @@
+# dependencies (only needed to rebuild css/tailwind.css)
+node_modules/
+
+# build / tooling artefacts
+.vercel
+.cache/
+.freebuff/
+
+# OS + editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+.vscode/
+.idea/

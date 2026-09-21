@@ -1,0 +1,24 @@
+{
+  "name": "tech-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "EGG//DROP — the Egg Drop Challenge, a SPICE design-process review rebuilt as a static site (HTML + Tailwind CSS).",
+  "scripts": {
+    "build:css": "tailwindcss -i ./css/tailwind.src.css -o ./css/tailwind.css --minify",
+    "watch:css": "tailwindcss -i ./css/tailwind.src.css -o ./css/tailwind.css --watch",
+    "serve": "python -m http.server 4173"
+  },
+  "keywords": [
+    "html",
+    "tailwindcss",
+    "static-site",
+    "egg-drop-challenge",
+    "spice",
+    "school-project"
+  ],
+  "author": "Aayush & Kunj",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

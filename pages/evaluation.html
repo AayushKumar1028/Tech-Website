@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evaluation — Trial Drops, Scorecard &amp; Simulator | EGG//DROP</title>
+<meta name="description" content="Stage 05 of the SPICE review: how we tested, the criteria scorecard, the lessons we learned and an interactive drop simulator.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tailwind.css">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-void text-ink font-sans antialiased">
+
+<div class="bg-stage" aria-hidden="true">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-a"></div>
+  <div class="bg-glow-b"></div>
+</div>
+<div id="progress" class="progress-bar" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="mx-auto flex h-full max-w-wrap items-center justify-between gap-4 px-5">
+    <a class="brand" href="../index.html">
+      <span class="letter-tile" aria-hidden="true">E</span>
+      <span>EGG<span class="brand-dot">//</span>DROP</span>
+    </a>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="m-0 flex list-none items-center gap-7 p-0">
+        <li><a class="nav-link" href="../index.html">Home</a></li>
+        <li><a class="nav-link" href="situation.html">Situation</a></li>
+        <li><a class="nav-link" href="problem.html">Problem</a></li>
+        <li><a class="nav-link" href="investigation.html">Investigation</a></li>
+        <li><a class="nav-link" href="construction.html">Construction</a></li>
+        <li><a class="nav-link" href="evaluation.html" aria-current="page">Evaluation</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">MENU</button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="mx-auto max-w-wrap px-5 pb-10 pt-12 sm:pt-16">
+    <div class="reveal in">
+      <div class="flex flex-wrap items-center gap-4">
+        <span class="letter-tile" aria-hidden="true">E</span>
+        <p class="eyebrow m-0">05 / Evaluation</p>
+      </div>
+      <h1 class="font-display mt-6 mb-5 max-w-3xl text-4xl font-bold leading-tight sm:text-5xl">
+        Testing and results
+      </h1>
+      <p class="m-0 max-w-2xl text-lg leading-relaxed text-muted">
+        A design is a hypothesis until it has fallen off something. Here is how we tested,
+        what the drops showed, and what we would change next time.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ METHOD ============ -->
+  <section class="mx-auto max-w-wrap px-5 pb-16">
+    <div class="grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
+      <div class="hud reveal p-8">
+        <p class="eyebrow m-0">&gt; test method</p>
+        <h2 class="font-display mt-4 mb-6 text-2xl font-semibold">How we tested</h2>
+        <ol class="m-0 grid list-none gap-5 p-0">
+          <li class="flex gap-4">
+            <span class="letter-tile" aria-hidden="true">1</span>
+            <span class="text-sm leading-relaxed text-muted">Dropped the device from the same height each time.</span>
+          </li>
+          <li class="flex gap-4">
+            <span class="letter-tile" aria-hidden="true">2</span>
+            <span class="text-sm leading-relaxed text-muted">Checked the egg for cracks and leaks after every drop.</span>
+          </li>
+          <li class="flex gap-4">
+            <span class="letter-tile" aria-hidden="true">3</span>
+            <span class="text-sm leading-relaxed text-muted">Recorded what happened and what to change next.</span>
+          </li>
+        </ol>
+      </div>
+
+      <div class="reveal" data-delay="1">
+        <div class="hud overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="data-table">
+              <caption class="sr-only">Trial drop log with height, egg result and observations</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Trial</th>
+                  <th scope="col">Drop height</th>
+                  <th scope="col">Egg result</th>
+                  <th scope="col">Observations</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-mono text-sm">01</td>
+                  <td><span class="chip">to log</span></td>
+                  <td><span class="chip">intact / cracked</span></td>
+                  <td><span class="text-muted">to log</span></td>
+                </tr>
+                <tr>
+                  <td class="font-mono text-sm">02</td>
+                  <td><span class="chip">to log</span></td>
+                  <td><span class="chip">intact / cracked</span></td>
+                  <td><span class="text-muted">to log</span></td>
+                </tr>
+                <tr>
+                  <td class="font-mono text-sm">03</td>
+                  <td><span class="chip">to log</span></td>
+                  <td><span class="chip">intact / cracked</span></td>
+                  <td><span class="text-muted">to log</span></td>
+                </tr>
+                <tr>
+                  <td class="font-mono text-sm text-gold">FINAL</td>
+                  <td><span class="chip">to log</span></td>
+                  <td><span class="chip">intact / cracked</span></td>
+                  <td><span class="text-muted">to log</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="dashed px-6 py-4">
+            <p class="m-0 text-sm text-muted">
+              The final drop happens on <span class="text-ink">Monday, September 21st, 2026</span>.
+              Until then these cells stay open — the simulator below shows what we expect.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SIMULATOR ============ -->
+  <section class="mx-auto max-w-wrap px-5 pb-16" id="simulator">
+    <div class="reveal mb-8 max-w-2xl">
+      <p class="eyebrow m-0">&gt; interactive</p>
+      <h2 class="font-display mt-4 mb-3 text-3xl font-bold">Drop simulator</h2>
+      <p class="m-0 leading-relaxed text-muted">
+        Run the trial yourself. An <strong class="text-ink">unprotected egg</strong> arrives
+        at full speed and stops almost instantly, which is exactly the case the maths says
+        fails. Our <strong class="text-ink">device</strong> arrives slowly and has a shell
+        that gives way, which spreads the impact out.
+      </p>
+    </div>
+
+    <div class="hud reveal p-8">
+      <div class="grid gap-8 lg:grid-cols-[1.35fr_0.65fr]">
+        <div>
+          <canvas id="sim-canvas" height="440" role="img" aria-label="Simulation of an egg being dropped and either cracking or surviving on landing"></canvas>
+          <p class="mt-4 mb-0 font-mono text-xs text-muted" id="sim-status" aria-live="polite">ready — arm the rig and press DROP</p>
+        </div>
+
+        <div class="grid content-start gap-6">
+          <div>
+            <p class="hud-label m-0">payload</p>
+            <div class="mt-3 grid gap-2">
+              <button class="check" type="button" data-payload="bare" aria-pressed="false">
+                <span class="check-box" aria-hidden="true">✓</span>
+                <span><strong class="check-label block text-ink">Bare egg</strong><span class="text-xs text-muted">no protection</span></span>
+              </button>
+              <button class="check" type="button" data-payload="device" aria-pressed="true" style="border-color:rgba(34,211,238,0.9);color:#22d3ee">
+                <span class="check-box" aria-hidden="true">✓</span>
+                <span><strong class="check-label block" style="color:#22d3ee">Our device</strong><span class="text-xs text-muted">canopy + shell + seat</span></span>
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between gap-4">
+              <p class="hud-label m-0">drop height</p>
+              <p class="m-0 font-mono text-sm text-neon" id="sim-height-label">1.50 m</p>
+            </div>
+            <input class="mt-4" id="sim-height" type="range" min="0.5" max="3" step="0.1" value="1.5" aria-label="Drop height in metres">
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <button class="btn btn-primary justify-center" id="sim-drop" type="button"><span>Drop</span></button>
+            <button class="btn btn-ghost justify-center" id="sim-reset" type="button"><span>Reset</span></button>
+          </div>
+
+          <div class="hud p-5">
+            <p class="hud-label m-0">telemetry</p>
+            <dl class="mt-3 mb-0">
+              <div class="kv"><dt>Impact speed</dt><dd id="sim-speed">—</dd></div>
+              <div class="kv"><dt>Peak force</dt><dd id="sim-force">—</dd></div>
+              <div class="kv"><dt>Fall time</dt><dd id="sim-time">—</dd></div>
+              <div class="kv"><dt>Verdict</dt><dd id="sim-verdict">STANDBY</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CRITERIA SCORECARD ============ -->
+  <section class="mx-auto max-w-wrap px-5 pb-16">
+    <div class="reveal mb-8 max-w-2xl">
+      <p class="eyebrow m-0">&gt; audit</p>
+      <h2 class="font-display mt-4 mb-3 text-3xl font-bold">Did we meet the criteria?</h2>
+      <p class="m-0 leading-relaxed text-muted">
+        Every criterion from the Problem stage, checked against the design feature that
+        answers it.
+      </p>
+    </div>
+
+    <div class="hud reveal overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="data-table">
+          <caption class="sr-only">Criteria scorecard with the design feature that satisfies each one</caption>
+          <thead>
+            <tr>
+              <th scope="col">Criterion</th>
+              <th scope="col">Met?</th>
+              <th scope="col">Evidence / design feature</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>The egg survives with no cracks or leaks</td>
+              <td><span class="chip">confirm at final drop</span></td>
+              <td><span class="text-muted">Padding and the parachute reduce the impact on the shell.</span></td>
+            </tr>
+            <tr>
+              <td>The device stays in one piece after landing</td>
+              <td><span class="chip">confirm at final drop</span></td>
+              <td><span class="text-muted">Taped seams and a sturdy cardstock shell.</span></td>
+            </tr>
+            <tr>
+              <td>Only the provided materials were used</td>
+              <td><span class="chip">yes</span></td>
+              <td><span class="text-muted">Everything came from the supplied kit.</span></td>
+            </tr>
+            <tr>
+              <td>Built within the time and size limits</td>
+              <td><span class="chip">yes</span></td>
+              <td><span class="text-muted">A simple four-step build kept us on schedule.</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT WORKED ============ -->
+  <section class="mx-auto max-w-wrap px-5 pb-16">
+    <div class="reveal mb-8 max-w-2xl">
+      <p class="eyebrow m-0">&gt; findings</p>
+      <h2 class="font-display mt-4 mb-3 text-3xl font-bold">What worked well</h2>
+    </div>
+
+    <div class="grid gap-4 md:grid-cols-3">
+      <div class="hud hud-hover reveal p-7">
+        <p class="phase-index m-0">THE PARACHUTE</p>
+        <p class="m-0 mt-4 text-sm leading-relaxed text-muted">
+          Slowed the fall and helped the shell land upright.
+        </p>
+      </div>
+      <div class="hud hud-hover reveal p-7" data-delay="1">
+        <p class="phase-index m-0">THE PADDING</p>
+        <p class="m-0 mt-4 text-sm leading-relaxed text-muted">
+          Held the egg still and absorbed shock from the landing.
+        </p>
+      </div>
+      <div class="hud hud-hover reveal p-7" data-delay="2">
+        <p class="phase-index m-0">TESTING EARLY</p>
+        <p class="m-0 mt-4 text-sm leading-relaxed text-muted">
+          Trial drops let us find and fix problems before the final test.
+        </p>
+      </div>
+    </div>
+
+    <div class="hud reveal mt-6 p-8 sm:p-10">
+      <p class="hud-label m-0">main lesson</p>
+      <p class="font-display mt-4 mb-0 text-2xl font-semibold text-gradient sm:text-3xl">
+        A longer stop means a smaller force on the egg.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ IMPROVEMENTS ============ -->
+  <section class="mx-auto max-w-wrap px-5 pb-16">
+    <div class="reveal mb-8 max-w-2xl">
+      <p class="eyebrow m-0">&gt; next iteration</p>
+      <h2 class="font-display mt-4 mb-3 text-3xl font-bold">What could be better</h2>
+      <p class="m-0 leading-relaxed text-muted">
+        Every honest evaluation ends with a list of things that were still wrong.
+      </p>
+    </div>
+
+    <div class="hud reveal overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="data-table">
+          <caption class="sr-only">Problems with the design and the changes we would make</caption>
+          <thead>
+            <tr>
+              <th scope="col">Problem</th>
+              <th scope="col">What we would change</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>The parachute can drift or tangle.</td>
+              <td><span class="text-muted">Use light, evenly spaced lines and pack the canopy carefully.</span></td>
+            </tr>
+            <tr>
+              <td>Extra padding adds weight.</td>
+              <td><span class="text-muted">Test different padding thicknesses to find the best balance.</span></td>
+            </tr>
+            <tr>
+              <td>We only tested a few drops.</td>
+              <td><span class="text-muted">Run more trials from different heights for more reliable results.</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONCLUSION ============ -->
+  <section class="mx-auto max-w-wrap px-5 pb-16">
+    <div class="hud reveal p-8 sm:p-10">
+      <p class="eyebrow m-0">&gt; conclusion</p>
+      <h2 class="font-display mt-4 mb-6 text-3xl font-bold">What we learned</h2>
+      <ul class="m-0 grid list-none gap-5 p-0">
+        <li class="flex gap-4">
+          <span class="text-neon" aria-hidden="true">▸</span>
+          <span class="leading-relaxed text-muted">
+            Engineers protect fragile things by making impacts last longer and spreading out the force.
+          </span>
+        </li>
+        <li class="flex gap-4">
+          <span class="text-neon" aria-hidden="true">▸</span>
+          <span class="leading-relaxed text-muted">
+            The SPICE process helped us plan, build, test and improve step by step.
+          </span>
+        </li>
+        <li class="flex gap-4">
+          <span class="text-neon" aria-hidden="true">▸</span>
+          <span class="leading-relaxed text-muted">
+            Testing and fixing problems made our design stronger.
+          </span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-wrap px-5 pb-20">
+    <div class="hud reveal p-8 text-center sm:p-12">
+      <p class="eyebrow m-0">&gt; end of review</p>
+      <h2 class="font-display mt-5 mb-4 text-3xl font-bold sm:text-4xl">Thank you — any questions?</h2>
+      <p class="mx-auto m-0 max-w-xl leading-relaxed text-muted">
+        That is the whole SPICE loop: situation, problem, investigation, construction,
+        evaluation. One egg, still intact.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a class="btn btn-primary" href="../index.html"><span>Back to the top</span></a>
+        <a class="btn btn-ghost" href="investigation.html#calculator"><span>Re-run the physics</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="mx-auto max-w-wrap px-5 py-12">
+    <div class="grid gap-8 md:grid-cols-[1.2fr_1fr_1fr]">
+      <div>
+        <a class="brand" href="../index.html">
+          <span class="letter-tile" aria-hidden="true">E</span>
+          <span>EGG<span class="brand-dot">//</span>DROP</span>
+        </a>
+        <p class="mt-4 max-w-sm text-sm leading-relaxed text-muted">
+          A SPICE design-process review of the Egg Drop Challenge, rebuilt as a static site.
+          Built by Aayush &amp; Kunj.
+        </p>
+      </div>
+      <nav aria-label="Stages">
+        <p class="hud-label m-0">Stages</p>
+        <ul class="mt-4 list-none space-y-2 p-0 text-sm">
+          <li><a class="footer-link" href="situation.html">Situation</a></li>
+          <li><a class="footer-link" href="problem.html">Problem</a></li>
+          <li><a class="footer-link" href="investigation.html">Investigation</a></li>
+          <li><a class="footer-link" href="construction.html">Construction</a></li>
+          <li><a class="footer-link" href="evaluation.html">Evaluation</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="hud-label m-0">Build</p>
+        <ul class="mt-4 list-none space-y-2 p-0 text-sm">
+          <li><span class="text-muted">HTML5 + Tailwind CSS</span></li>
+          <li><span class="text-muted">No build step</span></li>
+          <li><a class="footer-link" href="https://github.com/AayushKumar1028/Tech-Website" rel="noopener noreferrer">Source on GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="dashed mt-10 flex flex-wrap items-center justify-between gap-3 pt-6 font-mono text-xs text-muted">
+      <span>© <span data-year>2026</span> Aayush &amp; Kunj · Egg Drop Challenge</span>
+      <span>F = Δp / Δt</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script src="../js/physics.js"></script>
+</body>
+</html>

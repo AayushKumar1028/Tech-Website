@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Egg Drop">
+  <rect width="64" height="64" rx="9" fill="#04060d"/>
+  <ellipse cx="32" cy="34" rx="14" ry="18" fill="none" stroke="#22d3ee" stroke-width="3"/>
+  <g stroke="#22d3ee" stroke-width="2" stroke-linecap="round">
+    <path d="M32 16v-7M32 52v7M18 34H7M57 34H46"/>
+  </g>
+  <path d="M25 29l7 6-6 5 6 5" fill="none" stroke="#fbbf24" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
