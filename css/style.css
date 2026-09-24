@@ -15,6 +15,8 @@
   --gold: #fbbf24;
   --gold-rgb: 251, 191, 36;
   --lime: #a3e635;
+  --fail: #ef4444;
+  --fail-rgb: 239, 68, 68;
   --text: #dbe6f5;
   --muted: #8598bd;
   --header-h: 4.25rem;
@@ -459,6 +461,16 @@ body {
   box-shadow: 0 0 8px var(--neon);
 }
 
+.chip-lime {
+  color: var(--lime);
+  border-color: rgba(163, 230, 53, 0.45);
+}
+
+.chip-fail {
+  color: var(--fail);
+  border-color: rgba(var(--fail-rgb), 0.5);
+}
+
 .phase-index {
   font-family: "JetBrains Mono", monospace;
   font-size: 0.7rem;
@@ -585,6 +597,239 @@ body {
 }
 
 .sketch-frame svg { width: 100%; height: 100%; display: block; }
+
+/* ---------- media slots ----------
+   A slot holds one real photo or clip plus a caption strip. Every slot in the site is
+   filled, so there is no empty-frame styling to keep. */
+
+.media-slot {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--edge);
+  border-radius: 3px;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(56, 189, 248, 0.06) 1px, transparent 1px) 0 0 / 100% 18px,
+    linear-gradient(90deg, rgba(56, 189, 248, 0.06) 1px, transparent 1px) 0 0 / 18px 100%,
+    #060a13;
+}
+
+/* phone recordings arrive portrait (478 x 850 here), so the clip owns its own aspect
+   ratio instead of being cropped into a landscape frame */
+.media-slot--clip {
+  width: 100%;
+  max-width: 21rem;
+  aspect-ratio: 478 / 850;
+  margin-inline: auto;
+}
+
+.media-slot > video {
+  display: block;
+  flex: 1 1 auto;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
+  background: #04060d;
+}
+
+/* ---------- evidence strip (a row of result photos) ---------- */
+
+.media-strip {
+  display: grid;
+  /* two-up on a phone, three-up once there is room — big enough to read the damage */
+  grid-template-columns: repeat(auto-fit, minmax(min(14rem, 45%), 1fr));
+  gap: 0.75rem;
+}
+
+.media-figure {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.media-figure img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border: 1px solid var(--edge);
+  border-radius: 3px;
+  background: #04060d;
+}
+
+.media-figure figcaption {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* a fixed tile grid for a photo gallery — two up on a phone, three up once there is room */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .media-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.media-note {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem 1rem;
+  padding: 0.6rem 1rem;
+  border-top: 1px dashed rgba(133, 152, 189, 0.35);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.media-path {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--neon);
+  word-break: break-all;
+}
+
+.media-note .media-path { margin: 0; }
+
+/* ---------- spec plate (caption under a build photo) ---------- */
+
+.plate {
+  margin-top: 1rem;
+  padding: 1.1rem 1.3rem;
+  border: 1px solid var(--edge);
+  border-left: 3px solid var(--neon);
+  border-radius: 2px;
+  background: rgba(12, 19, 35, 0.7);
+}
+
+/* ---------- failed-idea stamp ---------- */
+
+.stamp-fail {
+  position: relative;
+  padding: 2.4rem 1.5rem;
+  border: 2px solid var(--fail);
+  border-radius: 2px;
+  background:
+    repeating-linear-gradient(135deg, rgba(var(--fail-rgb), 0.12) 0 12px, transparent 12px 24px),
+    linear-gradient(180deg, rgba(var(--fail-rgb), 0.09), rgba(8, 13, 25, 0.92));
+  box-shadow:
+    0 0 60px -18px rgba(var(--fail-rgb), 0.75),
+    inset 0 0 46px -22px rgba(var(--fail-rgb), 0.9);
+}
+
+.stamp-fail::before,
+.stamp-fail::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: repeating-linear-gradient(90deg, var(--fail) 0 10px, transparent 10px 20px);
+  opacity: 0.7;
+}
+
+.stamp-fail::before { top: 0; }
+.stamp-fail::after { bottom: 0; }
+
+.stamp-fail-text {
+  margin: 0;
+  font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(3rem, 11vw, 6rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fail);
+  text-shadow:
+    0 0 24px rgba(var(--fail-rgb), 0.65),
+    0 0 64px rgba(var(--fail-rgb), 0.35);
+}
+
+.stamp-fail-note {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: rgba(255, 214, 214, 0.85);
+}
+
+/* ---------- review table (prototype / final findings) ---------- */
+
+.data-table tbody th[scope="row"] {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--neon);
+  vertical-align: top;
+}
+
+/* a fixed label column only once there is room for it */
+@media (min-width: 640px) {
+  .data-table tbody th[scope="row"] { width: 11rem; }
+}
+
+/* On a phone the result strip runs two-up, so an odd last photo would sit alone in a half
+   column — let it take the whole row instead. */
+@media (max-width: 639px) {
+  .media-strip > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+
+/* Review tables (a label column plus a findings column) stack into blocks below sm, so they
+   can never run off the page. Opt in with .data-table--stack — the wide comparison tables on
+   the other pages keep their columns and their horizontal scroll. */
+@media (max-width: 639px) {
+  .data-table--stack,
+  .data-table--stack > thead,
+  .data-table--stack > tbody,
+  .data-table--stack tr,
+  .data-table--stack th,
+  .data-table--stack td {
+    display: block;
+    width: auto;
+  }
+
+  .data-table--stack > thead { display: none; }
+
+  .data-table--stack tbody tr {
+    padding: 0.5rem 0 1rem;
+    border-bottom: 1px solid var(--edge);
+  }
+
+  .data-table--stack tbody tr:last-child { border-bottom: 0; }
+
+  .data-table--stack tbody th,
+  .data-table--stack tbody td {
+    border-bottom: 0;
+    padding: 0.3rem 1rem;
+  }
+
+  .data-table--stack tbody td { padding-top: 0; }
+
+  .data-table--stack td[data-label]::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 0.35rem;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+}
 
 /* ---------- footer ---------- */
 
